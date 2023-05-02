@@ -1,0 +1,8 @@
+.about-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto 70px auto;
+    font-size: 23px;
+}
