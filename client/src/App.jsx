@@ -34,7 +34,7 @@ export default function App() {
     useEffect(() => {
         const connectWallet = async() => {
 
-            const contractAddress = "0x5c611501D7630985dF81C5B107F5c0729b000a56";
+            const contractAddress = "0x12253DAB9c6211E5b7519Bd67502dD9619053735";
             const contractABI = abi.abi;
 
             try {
@@ -100,7 +100,7 @@ export default function App() {
                 <Route path="contact-us" element={<ContactPage />} />
                 <Route path="dashboard" element={<DashboardPage />} >
                     <Route index element={<ProfilePage />} />
-                    <Route path="my-articles" element={<MyArticlesPage />} />
+                    <Route path="my-articles" element={<MyArticlesPage WalletState={WalletState} />} />
                     <Route path="bookmarked" element={<BookmarkedArticlesPage />} />
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="my-wallets" element={<MyWalletsPage />} />

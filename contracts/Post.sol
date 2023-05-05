@@ -22,6 +22,9 @@ contract Post {
     // mapping to store all articles
     mapping (uint => Article) public articles;
 
+    // mapping to store author's articles
+    mapping (address => uint[]) public authorArticles;
+
     // contract owner's address
     address payable owner;
 
@@ -65,6 +68,9 @@ contract Post {
        articles[postId] = (
         Article(msg.sender, _authorAlias, _category, _title, _contentHash, _imageHash, block.timestamp, postId)
        );
+
+       // Add the post ID to the author's articles mapping
+        authorArticles[msg.sender].push(postId);
     }
 
     function updatePost(uint _postId, string memory _title, string memory _contentHash) external onlyAuthor(_postId) postExists(_postId) hasEnoughDeposits() {
@@ -80,6 +86,10 @@ contract Post {
 
     function getPost(uint _postId) external postExists(_postId) view returns (Article memory) {
         return articles[_postId];
+    }
+
+    function getAuthorArticleIds(address _authorAddress) external view returns(uint[] memory) {
+        return authorArticles[_authorAddress];
     }
     
     /*

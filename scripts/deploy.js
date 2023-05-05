@@ -19,5 +19,5 @@ main().catch((error) => {
     process.exitCode = 1;
   });
 
-// Address of contract:  0x5c611501D7630985dF81C5B107F5c0729b000a56
+// Address of contract:  0x12253DAB9c6211E5b7519Bd67502dD9619053735
 // npx hardhat run --network mumbai scripts/deploy.js
