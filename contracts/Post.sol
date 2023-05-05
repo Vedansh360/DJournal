@@ -13,6 +13,7 @@ contract Post {
         string contentHash;
         string imageHash;
         uint256 timestamp;
+        uint256 articleId;
     }
 
     // unique post Id
@@ -62,7 +63,7 @@ contract Post {
         postId++;
 
        articles[postId] = (
-        Article(msg.sender, _authorAlias, _category, _title, _contentHash, _imageHash, block.timestamp)
+        Article(msg.sender, _authorAlias, _category, _title, _contentHash, _imageHash, block.timestamp, postId)
        );
     }
 
