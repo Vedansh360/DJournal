@@ -337,6 +337,7 @@ input[type=checkbox] {
     padding: 40px 0 20px;
     text-align: center;
     background-color: black;
+    position: relative;
   }
   
 .footer-container a {
