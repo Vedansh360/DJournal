@@ -38,6 +38,10 @@ export default function MyArticlesPage(props) {
 
     return (
         <div className="my-articles-container">
+            <div className="my-articles-heading-container">
+                <h1>| My Articles |</h1>
+            </div>
+            <hr/>
             {authorArticleIds.map((id) => {
                 return (
                     <AuthorArticlesListItem key={id} articleId={id} contract={contract} />

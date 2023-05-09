@@ -18,10 +18,12 @@ export default function AuthorArticlesListItem(props) {
 
     return (
         <div className="article-list-item-div">
-            <h3>{article.title}</h3>
-            <Button variant="success" className="article-list-item-button">View</Button>
-            <Button variant="primary" className="article-list-item-button">Edit</Button>
-            <Button variant="danger" className="article-list-item-button">Delete</Button>
+            <h4>{article.title}</h4>
+            <div className="article-list-item-button-container">
+                <Button variant="outline-success" className="article-list-item-button">View</Button>
+                <Button variant="outline-primary" className="article-list-item-button">Edit</Button>
+                <Button variant="outline-danger" className="article-list-item-button">Delete</Button>
+            </div>
         </div>
     )
 }
