@@ -143,15 +143,17 @@ input[type=checkbox] {
 
 .carousel-container {
     position: relative;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
 }
 
 .search-bar {
     z-index: 1000;
     position: absolute;
     top: 7%;
-    left: 27%;
-    right: auto;
-    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     max-width: 700px;
     background: rgba(255, 255, 255, 0.2);
@@ -172,7 +174,7 @@ input[type=checkbox] {
     color: white;
 }
 
-.search-bar button img{
+.search-bar button img {
     width: 25px;
 }
 
@@ -192,12 +194,22 @@ input[type=checkbox] {
     height: 65px;
 }
 
+@media (max-width: 768px) {
+    .search-bar {
+        top: 10%;
+        left: 5%;
+        width: 70%;
+    }
+}
+
 /*========== SEARCH BAR END ==========*/
 
 /*========== CREATE POST BUTTON ==========*/
 
 .homepage-carousel-button-container {
     display: flex;
+    flex-wrap: wrap;
+    align-self: center;
 }
 
 .create-post-button {
@@ -211,6 +223,9 @@ input[type=checkbox] {
     font-size: large;
     font-weight: 550;
     opacity: 0.9;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-post-button:hover {
@@ -237,6 +252,9 @@ input[type=checkbox] {
     font-size: large;
     font-weight: 550;
     opacity: 0.9;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboard-button:hover {
