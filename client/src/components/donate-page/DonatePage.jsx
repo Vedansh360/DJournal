@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import React, { useState} from "react";
 import "./styles.css"
+import coffee from "./../../images/coffee.png"
 
 export default function DonatePage(props) {
   const [name, setName] = useState("");
@@ -23,7 +24,9 @@ export default function DonatePage(props) {
 
   return (
     <div className="CryptoDonation">
-      <h1>Buy me a Coffee!</h1>
+      <div className="image-container">
+        <img src={coffee} className="buy-coffee-img" alt=".." width="50%" height="10%"/>
+      </div>
       <form className="CryptoDonation-form" onSubmit={handleDonate}>
         <label>
           Name:
@@ -42,7 +45,7 @@ export default function DonatePage(props) {
           />
         </label>
         <label>
-          Amount (in ether):
+          Amount (in $MATIC):
           <input
             type="number"
             value={amount}
