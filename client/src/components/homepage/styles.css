@@ -97,7 +97,7 @@ input[type=checkbox] {
 }
 
 /*applying media queries*/
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .menu {
         display: none;
         position: absolute;
@@ -143,12 +143,12 @@ input[type=checkbox] {
 
 .carousel-container {
     position: relative;
-    flex-direction: column;
-    width: 100%;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-.search-bar {
+.search-bar-container {
     z-index: 1000;
     position: absolute;
     top: 7%;
@@ -159,114 +159,118 @@ input[type=checkbox] {
     background: rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 60px;
-    padding: 10px 20px;
+    padding: 1% 1.5%;
     backdrop-filter: blur(4px) saturate(180%);
 }
 
-.search-bar input {
+.search-bar-container input {
     background: transparent;
     flex: 1;
     border: 0;
     outline: none;
-    padding: 20px 20px;
+    padding: 1% 1.5%;
     font-size: 20px;
     color: white;
 }
 
-.search-bar button img {
+.search-bar-container button img {
     width: 25px;
 }
 
-.search-bar button {
+.search-bar-container button {
     border: 0;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     background: #4c949e;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.search-bar button:hover {
+.search-bar-container button:hover {
     background-color: #2f6a72;
     transition: 0.3s ease;
     width: 65px;
     height: 65px;
 }
 
-@media (max-width: 768px) {
-    .search-bar {
-        top: 10%;
-        left: 5%;
-        width: 70%;
+@media screen and (max-width: 600px) {
+    .search-bar-container button {
+        width: 50px; 
+        height: 50px; 
+        font-size: 14px; 
+    }
+
+    .search-bar-container input {
+        font-size: 16px;
+    }
+
+    .search-bar-container button:hover {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .search-bar-container {
+        left: 50%;
+        width: 75%;
     }
 }
 
 /*========== SEARCH BAR END ==========*/
 
-/*========== CREATE POST BUTTON ==========*/
+/*========== CAROUSEL BUTTONS ==========*/
 
 .homepage-carousel-button-container {
     display: flex;
     flex-wrap: wrap;
-    align-self: center;
-}
-
-.create-post-button {
     position: absolute;
     top: 17%;
-    left: 35%;
-    background: #4c949e;
-    border: none;
-    width: 13%;
-    height: 5%;
-    font-size: large;
-    font-weight: 550;
-    opacity: 0.9;
-    display: flexbox;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.create-post-button:hover {
-    background-color: #2f6a72;
-    border-radius: 5px;
-    transition: 0.3s ease;
-    height: 6%;
-    top: 16.5%;
-    opacity: 1;
+@media screen and (max-width: 600px) {
+    .homepage-carousel-button-container {
+        flex-direction: column;
+        top: 14%;
+    }
+
+    .create-post-button, .dashboard-button {
+        height: 50px;
+    }
 }
 
-/*========== CREATE POST BUTTON END ==========*/
-
-/*========== DASHBOARD BUTTON ==========*/
-
-.dashboard-button {
-    position: absolute;
-    top: 17%;
-    left: 52%;
+.create-post-button, .dashboard-button {
     background: #4c949e;
     border: none;
-    width: 13%;
-    height: 5%;
+    height: 65px;
     font-size: large;
     font-weight: 550;
     opacity: 0.9;
-    display: flexbox;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    margin: 10px 20px;
 }
 
-.dashboard-button:hover {
+.create-post-button:hover, .dashboard-button:hover {
     background-color: #2f6a72;
     border-radius: 5px;
     transition: 0.3s ease;
-    height: 6%;
-    top: 16.5%;
+    padding: 35px;
+    top: 15%;
     opacity: 1;
 }
 
-/*========== DASHBOARD BUTTON END ==========*/
+/*========== CAROUSEL BUTTONS END ==========*/
 
 /*========== CAROUSEL CAPTION ==========*/
 
@@ -293,6 +297,7 @@ input[type=checkbox] {
 .recent-articles-heading {
     margin-top: 80px;
     margin-left: 20px;
+    margin-right: 75%;
     background-color: #4c949e;
     color: white;
     display: inline-flex;
