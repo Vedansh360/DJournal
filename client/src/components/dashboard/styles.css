@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: row;
   }
+
+.dashboard-outlet {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 85vh;
+  background-color: gray;
+}
   
 /* The side navigation menu */
 .dashboard-sidebar-container {

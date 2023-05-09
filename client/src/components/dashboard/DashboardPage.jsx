@@ -22,9 +22,9 @@ export default function DashboardPage() {
                 <NavLink to='settings'><AiFillSetting /> &nbsp; Settings</NavLink>
                 <NavLink to='my-wallets'><FaWallet /> &nbsp; My Wallets</NavLink>
             </div>
-            <main>
+            <div className="dashboard-outlet">
                 <Outlet />
-            </main>
+            </div>
         </div>
     );
 }
