@@ -16,7 +16,7 @@ export default function CreatePostButton() {
 
   return (
     <>
-      <Button variant="primary" className='create-post-button' onClick={handleCreatePostClick} >Create Post</Button>
+      <Button variant="primary" className='create-post-button gradient' onClick={handleCreatePostClick}>Create Post</Button>
     </>
   );
 }

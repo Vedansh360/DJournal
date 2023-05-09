@@ -184,7 +184,6 @@ input[type=checkbox] {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    background: #4c949e;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -192,7 +191,6 @@ input[type=checkbox] {
 }
 
 .search-bar-container button:hover {
-    background-color: #2f6a72;
     transition: 0.3s ease;
     width: 65px;
     height: 65px;
@@ -257,17 +255,34 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    margin: 10px 20px;
+    padding: 35px 45px;
+    margin: 10px 25px;
 }
 
 .create-post-button:hover, .dashboard-button:hover {
-    background-color: #2f6a72;
     border-radius: 5px;
     transition: 0.3s ease;
-    padding: 35px;
+    padding: 37px 47px;
     top: 15%;
     opacity: 1;
+}
+
+.gradient {
+    background: linear-gradient(-45deg, #2f90e4, #491f9d, #c2b016, #ae2016, rgb(76, 193, 76));
+    background-size: 400% 400%;
+    animation: bg-gradient 11s ease infinite;
+}
+
+@keyframes bg-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /*========== CAROUSEL BUTTONS END ==========*/

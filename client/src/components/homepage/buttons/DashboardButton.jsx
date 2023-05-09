@@ -16,7 +16,7 @@ export default function DashboardButton() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleDashboardClick} className='dashboard-button'>Dashboard</Button>
+      <Button variant="primary" onClick={handleDashboardClick} className='dashboard-button gradient'>Dashboard</Button>
     </>
   );
 }

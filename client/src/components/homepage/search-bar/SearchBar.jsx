@@ -5,7 +5,7 @@ export default function SearchBar() {
     return (
         <div className="search-bar-container">
             <input type="text" placeholder="Search article" />
-            <button type="submit"><img src={search_icon} alt="Submit" /></button>
+            <button type="submit" className="gradient"><img src={search_icon} alt="Submit" /></button>
         </div>
     );
 }
