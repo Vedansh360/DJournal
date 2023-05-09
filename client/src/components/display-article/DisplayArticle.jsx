@@ -1,7 +1,9 @@
-// import components
+// import libraries
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+
+// import css file
 import './styles.css';
 
 // pinata api keys
