@@ -1,5 +1,20 @@
 .CryptoDonation {
-  margin: 70px 30px 80px 30px;
+  margin: 70px 50px 80px 50px;  
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.CryptoDonation h1 {
+  margin: 5px auto;
+  display: table;
+  padding-bottom: 20px;
 }
 
 .CryptoDonation-form {
