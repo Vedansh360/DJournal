@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import { ethers } from "ethers";
+import React, { useState, useEffect } from "react";
 import "./styles.css"
 
-export default function DonatePage() {
+export default function DonatePage(props) {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState("");
+  
+  const { contract } = props.WalletState;
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // send donation information to your server or payment processor
-  };
+  const handleDonate = async(e) => {
+    e.preventDefault();
+    const donationValue = ethers.utils.parseEther(amount.toString());
+  
+    const transaction = await contract.donate(name, message, donationValue, {
+      value: donationValue
+    });
+        const receipt = await transaction.wait();
+  
+    console.log("Transaction receipt: ", receipt);
+  }
 
   return (
     <div className="CryptoDonation">
-      <h1>Make a Crypto Donation</h1>
-      <form className="CryptoDonation-form" onSubmit={handleSubmit}>
+      <h1>Buy me a Coffee!</h1>
+      <form className="CryptoDonation-form" onSubmit={handleDonate}>
         <label>
           Name:
           <input
@@ -25,32 +34,22 @@ export default function DonatePage() {
           />
         </label>
         <label>
-          Email:
+          Message:
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </label>
         <label>
-          Amount:
+          Amount (in ether):
           <input
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />
         </label>
-        <label>
-          Currency:
-          <select
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-          >
-            <option value="BTC">Bitcoin</option>
-            <option value="ETH">Ethereum</option>
-            <option value="LTC">Litecoin</option>
-          </select>
-        </label>
+        
         <button type="submit">Donate</button>
       </form>
     </div>

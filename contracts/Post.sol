@@ -44,6 +44,11 @@ contract Post {
         _;
     }
 
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+
     modifier postExists(uint _postId) {
         require(_postId > 0 && _postId <= postId, "Post does not exist.");
         _;
@@ -101,4 +106,35 @@ contract Post {
     */
 
     //==================================
+
+    struct Donation {
+        string name;
+        string message;
+        uint256 amount;
+    }
+
+    // list of donations made
+    Donation[] donations;
+
+    // function to donate
+    function donate(string memory _name, string memory _message, uint256 _amount) external payable {
+        donations.push(Donation(
+            _name,
+            _message,
+            _amount
+        ));
+        owner.transfer(msg.value);
+    }
+
+    // function to retrieve all donations
+    function getDonations() external view returns (Donation[] memory) {
+        return donations;
+    }
+
+    // Function to receive Ether. msg.data must be empty
+    receive() external payable {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable {}
+
 }

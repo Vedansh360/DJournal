@@ -34,7 +34,7 @@ export default function App() {
     useEffect(() => {
         const connectWallet = async() => {
 
-            const contractAddress = "0x12253DAB9c6211E5b7519Bd67502dD9619053735";
+            const contractAddress = "0x647224A46Def0F16034F1bD4737b8ad6625c13f7";
             const contractABI = abi.abi;
 
             try {
@@ -105,7 +105,7 @@ export default function App() {
                     <Route path="settings" element={<SettingsPage />} />
                     <Route path="my-wallets" element={<MyWalletsPage />} />
                 </Route>
-                <Route path="donate" element={<DonatePage />} />
+                <Route path="donate" element={<DonatePage WalletState={WalletState} />} />
             </Route>
         )
     )
