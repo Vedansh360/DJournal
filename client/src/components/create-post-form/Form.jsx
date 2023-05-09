@@ -1,6 +1,13 @@
 //import components
 import FileUpload from "./file-upload/FileUpload";
 
+// import icons
+import { IconContext } from "react-icons";
+import { FaUserEdit } from 'react-icons/fa';
+import { BiCategory } from 'react-icons/bi';
+import { MdTitle } from 'react-icons/md';
+import { BsNewspaper } from 'react-icons/bs'
+
 //import bootstrap components
 import Spinner from "react-bootstrap/Spinner";
 
@@ -131,15 +138,29 @@ export default function CreatePostForm({ WalletState }) {
     return (
         <div className="create-post-form-container">
             <form onSubmit={handlePublishButtonClick}>
+
                 <div className="create-post-form-heading-container">
                     <h1>Let the World Know...Publish!</h1>
                 </div>
+
                 <div className="author-alias-input-container">
+                    <IconContext.Provider value={{size: "1.8em", color: "#73AD21"}}>
+                        <FaUserEdit/>
+                    </IconContext.Provider>
+                    &nbsp;&nbsp;&nbsp;
                     <input type="text" value={authorAlias} onChange={(event) => setAuthorAlias(event.target.value)} required />
                     <label className="floating-label-1">Author Alias</label>
                 </div>
+
                 <div className="create-post-form-category-select-container">
+
+                    <IconContext.Provider value={{size: "1.8em", color: "#73AD21"}}>
+                        <BiCategory/>
+                    </IconContext.Provider>
+                    &nbsp;&nbsp;&nbsp;
+
                     <select value={category} onChange={(event) => setCategory(event.target.value)}>
+                        <option selected disabled>--- Select Category ---</option>
                         <option>Crime</option>
                         <option>Economics</option>
                         <option>Lifestyle</option>
@@ -152,17 +173,29 @@ export default function CreatePostForm({ WalletState }) {
                         <option>Whistleblowing</option>
                     </select>
                 </div>
+
                 <div className="title-input-container">
+                    <IconContext.Provider value={{size: "1.8em", color: "#73AD21"}}>
+                        <MdTitle/>
+                    </IconContext.Provider>
+                    &nbsp;&nbsp;&nbsp;
                     <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} required />
                     <label className="floating-label-2">Title</label>
                 </div>
+
                 <div className="article-input-container">
-                    <textarea value={content} onChange={(event) => setContent(event.target.value)}  required/>
+                    <IconContext.Provider value={{size: "1.8em", color: "#73AD21"}}>
+                        <BsNewspaper/>
+                    </IconContext.Provider>
+                    &nbsp;&nbsp;&nbsp;
+                    <textarea className="article-input-textarea" value={content} onChange={(event) => setContent(event.target.value)}  required/>
                     <label className="floating-label-3">Your Article</label>
                 </div>
+
                 <div className="file-upload-container">
                     <FileUpload handleImageInput={handleImageInput} />
                 </div>
+
                 <div className="create-post-form-submit-button-container">
                     {formState === "publishing" ? <Spinner animation="border" variant="success" className="publish-spinner" /> : <Button type="submit" variant="success" className='publish-post-button' >Publish</Button>}
                 </div>

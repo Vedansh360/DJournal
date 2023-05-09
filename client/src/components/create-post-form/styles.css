@@ -21,6 +21,14 @@
     width: 100%;
 }
 
+.author-alias-input-container {
+    margin: 30px auto 10px auto;
+}
+
+.title-input-container, .article-input-container {
+    margin: 10px 0;
+}
+
 /*========== FORM CONTAINERS END ==========*/
 
 /*========== FORM HEADING ==========*/
@@ -43,7 +51,7 @@
 
 /*========== INPUT BOXES ==========*/
 
-.create-post-form-container input, select, textarea {
+.create-post-form-container input, select, .article-input-textarea {
     border-radius: 25px;
     border: 2px solid #73AD21;
 }
@@ -53,30 +61,13 @@
     color: #cccccc;
     position: absolute;
     pointer-events: none;
-    transition: all 0.1s ease;
-}
-
-.floating-label-1 {
-    top: 40px;
-    left: 590px;
-}
-
-.floating-label-2 {
-    top: 40px;
-    left: 250px;
-}
-
-.floating-label-3 {
-    top: 50px;
-    left: 250px;
 }
 
 input:focus ~ .floating-label-1,
 input:not(:focus):valid ~ .floating-label-1 {
     top: -10px;
-    bottom: 0px;
-    left: 580px;
-    font-size: 20px;
+    font-size: 25px;
+    transition: 0.2s ease;
     opacity: 1;
     color: #404040;
 }
@@ -84,19 +75,17 @@ input:not(:focus):valid ~ .floating-label-1 {
 input:focus ~ .floating-label-2,
 input:not(:focus):valid ~ .floating-label-2 {
     top: -10px;
-    bottom: 0px;
-    left: 240px;
-    font-size: 20px;
+    font-size: 25px;
+    transition: 0.2s ease;
     opacity: 1;
     color: #404040;
 }
 
 textarea:focus ~ .floating-label-3,
 textarea:not(:focus):valid ~ .floating-label-3 {
-    top: -1px;
-    bottom: 0px;
-    left: 240px;
-    font-size: 20px;
+    top: -7px;
+    font-size: 25px;
+    transition: 0.2s ease;
     opacity: 1;
     color: #404040;
 }
@@ -106,14 +95,14 @@ textarea:not(:focus):valid ~ .floating-label-3 {
 /*========== INPUT BOX CONTAINERS ==========*/
 
 .author-alias-input-container input {
-    width: 25%;
+    width: 400px;
     height: 50px;
     padding-left: 15px;
 	margin: 30px 0px 30px 0px;
 }
 
 .create-post-form-category-select-container select {
-    width: 25%;
+    width: 400px;
     height: 50px;
     padding-left: 15px;
 	margin: 30px 0px;
@@ -132,6 +121,18 @@ textarea:not(:focus):valid ~ .floating-label-3 {
     padding-left: 15px;
     padding-top: 10px;
 	margin: 40px 0px 30px 0px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .title-input-container input {
+        width: 400px;
+    }
+
+    .article-input-container textarea {
+        width: 400px;
+    }
+
 }
 
 /*========== INPUT BOX CONTAINERS END ==========*/
@@ -181,5 +182,4 @@ textarea:not(:focus):valid ~ .floating-label-3 {
 }
 
 /*========== PUBLISH BUTTON END ==========*/
-
 
