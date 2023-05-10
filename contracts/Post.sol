@@ -50,7 +50,7 @@ contract Post {
     }
 
     modifier postExists(uint _postId) {
-        require(articles[_postId].timestamp != 0 &&_postId > 0 && _postId <= postId, "Post does not exist.");
+        require(articles[_postId].timestamp != 0 && _postId > 0 && _postId <= postId, "Post does not exist.");
         _;
     }
 

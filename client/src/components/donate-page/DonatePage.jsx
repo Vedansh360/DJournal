@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import React, { useState} from "react";
 import "./styles.css"
 import coffee from "./../../images/coffee.png"
+import Spinner from "react-bootstrap/Spinner";
 
 export default function DonatePage(props) {
   const [name, setName] = useState("");
