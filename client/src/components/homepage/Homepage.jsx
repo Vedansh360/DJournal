@@ -44,14 +44,13 @@ export default function Homepage(props) {
                 let recentArticlesList = [];
                 for(let i = 1; i <= latestPostId; i++) {
                     const _post = await contract.getPost(i);
-                    console.log(_post);
-                    if (_post.timestamp !== 0) {
+                    if (_post.timestamp != 0) {
                         recentArticlesIDs.push(i);
                         recentArticlesList.push(_post);
                     }
                 }
                 setRecentArticles(recentArticlesList);
-                if (recentArticlesList.length !== 0) {
+                if (recentArticlesList.length != 0) {
                     setRecentArticlesState("fetched");
                 }
             }
