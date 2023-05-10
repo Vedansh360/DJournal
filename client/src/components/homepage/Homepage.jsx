@@ -41,11 +41,14 @@ export default function Homepage(props) {
         // get all recent articles
         if (latestPostId) {
             const getAllRecentArticles = async() => {
-                const recentArticlesList = [];
+                let recentArticlesList = [];
                 for(let i = 1; i <= latestPostId; i++) {
                     const _post = await contract.getPost(i);
-                    recentArticlesIDs.push(i);
-                    recentArticlesList.push(_post);
+                    console.log(_post);
+                    if (_post.timestamp != 0) {
+                        recentArticlesIDs.push(i);
+                        recentArticlesList.push(_post);
+                    }
                 }
                 setRecentArticles(recentArticlesList);
                 setRecentArticlesState("fetched");
