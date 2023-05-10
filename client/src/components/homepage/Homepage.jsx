@@ -58,9 +58,6 @@ export default function Homepage(props) {
         }
   
     });
-  
-    //console.log(recentArticles);
-    //console.log(latestPostId);
 
     //============== RECENT ARTICLES END ==============//
 
