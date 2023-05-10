@@ -50,7 +50,7 @@ contract Post {
     }
 
     modifier postExists(uint _postId) {
-        require(articles[_postId].timestamp != 0 && _postId > 0 && _postId <= postId, "Post does not exist.");
+        require(articles[_postId].authorAddress != address(0) && _postId > 0 && _postId <= postId, "Post does not exist.");
         _;
     }
 
@@ -100,7 +100,7 @@ contract Post {
         }
     }
 
-    function getPost(uint _postId) external postExists(_postId) view returns (Article memory) {
+    function getPost(uint _postId) external view returns (Article memory) {
         return articles[_postId];
     }
 
