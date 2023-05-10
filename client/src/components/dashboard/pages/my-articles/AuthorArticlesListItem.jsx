@@ -24,7 +24,7 @@ export default function AuthorArticlesListItem(props) {
     }
 
     const handleDeleteClick = async() => {
-        //contract.deletePost(id);
+        await contract.deletePost(id);
     }
 
     return (

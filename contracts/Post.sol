@@ -50,7 +50,7 @@ contract Post {
     }
 
     modifier postExists(uint _postId) {
-        require(_postId > 0 && _postId <= postId, "Post does not exist.");
+        require(articles[_postId].timestamp != 0 && _postId > 0 && _postId <= postId, "Post does not exist.");
         _;
     }
 
@@ -86,7 +86,18 @@ contract Post {
     }
 
     function deletePost(uint _postId) external onlyAuthor(_postId) postExists(_postId) hasEnoughDeposits() {
+        address author = articles[_postId].authorAddress;
+        
         delete articles[_postId]; 
+
+        uint[] storage authorPostIds = authorArticles[author];
+        for (uint i = 0; i < authorPostIds.length; i++) {
+            if (authorPostIds[i] == _postId) {
+                authorPostIds[i] = authorPostIds[authorPostIds.length - 1];
+                authorPostIds.pop();
+                break;
+            }
+        }
     }
 
     function getPost(uint _postId) external postExists(_postId) view returns (Article memory) {
