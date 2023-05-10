@@ -51,7 +51,9 @@ export default function Homepage(props) {
                     }
                 }
                 setRecentArticles(recentArticlesList);
-                setRecentArticlesState("fetched");
+                if (recentArticlesList.length != 0) {
+                    setRecentArticlesState("fetched");
+                }
             }
             getAllRecentArticles();
         }
