@@ -17,9 +17,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    background-color: #203354;
+    background-color: #17253f;
     left: 0;
-    width: 200px;
+    width: 220px;
     overflow: auto;
   }
   
