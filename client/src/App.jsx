@@ -99,7 +99,7 @@ export default function App() {
                 <Route path=":Id" element={<DisplayArticle WalletState={WalletState} />} />
                 <Route path="contact-us" element={<ContactPage />} />
                 <Route path="dashboard" element={<DashboardPage />} >
-                    <Route index element={<ProfilePage />} />
+                    <Route index element={<ProfilePage WalletState={WalletState} />} />
                     <Route path="my-articles" element={<MyArticlesPage WalletState={WalletState} />} />
                     <Route path="bookmarked" element={<BookmarkedArticlesPage />} />
                     <Route path="settings" element={<SettingsPage />} />
