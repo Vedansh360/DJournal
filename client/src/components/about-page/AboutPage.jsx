@@ -9,7 +9,7 @@ export default function AboutPage() {
             <h1 style={{fontWeight: "bold"}}>About</h1>
             <br/>
             <p style={{color: "black"}}>
-                DJournal is a revolutionary news sharing and journaling application designed to provide a platform for independent journalists, news agencies, and individuals to post news and other updates anonymously on the blockchain. Our primary goal is to enable free and unbiased sharing of information without any fear of censorship or retribution from any government or private organization.
+                DJournal is a decentralized news sharing and journaling application designed to provide a platform for independent journalists, news agencies, and individuals to post news and other updates anonymously on the blockchain. Our primary goal is to enable free and unbiased sharing of information without any fear of censorship or retribution from any government or private organization.
             </p>
             <p style={{color: "black"}}>
                 The current media landscape is plagued by corruption, censorship, and bias. DJournal aims to address these issues by leveraging the power of blockchain technology and implementing smart contracts and IPFS. With this approach, we can ensure that no individual or organization has control over the data, and anyone can safely post any news or information they desire without worrying about it being taken down or manipulated.
